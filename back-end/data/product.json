@@ -1,0 +1,23 @@
+{
+    "name":"testnew",
+    "price":"45",
+    "description":"yeah yeah",
+    "ratings":"5",
+    "images":[{
+        "public_id":"ah",
+        "url":"sed i have to fill all"
+        }],
+        "category":"Cloths",
+        "seller":"suryansh",
+        "stock":"69",
+        "reviews":[
+            {
+                "name":"bruh",
+                "rating":"5",
+                "comment":"comment"
+            }
+        ]
+        
+
+
+}
