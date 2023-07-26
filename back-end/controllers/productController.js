@@ -26,16 +26,37 @@ exports.getProducts= async(req,res,next)=>{
 
 //get single product detail => /api/v1/product/:id
 
-exports.getsingleProduct=async(res,req,next)=>{
+exports.getsingleProduct=async(req,res,next)=>{
     const product=await Product.findById(req.params.id)
-    if(!product){
+    if (!product){
         return res.status(404).json({
-            sucess:false,
+            success:false,
             message:'no such product bruh'
         })
     }
-    res.status(200)({
+    res.status(200).json({
         sucess:true,
         product
     })
+}
+
+//UPdate product => /api/v1/product/:id
+exports.updateProduct=async(req,res,next)=>{
+    let product=await Product.findById(req.params.id)
+    if(!product){
+        return res.status(404).json({
+            success:false,
+            message:'cant find the product'
+        })
+    }
+        product=await Product.findByIdAndUpdate(req.params.id,req.body,req.body,{
+            new:true,
+            runValidators:true,
+            useFindAndModify:false
+    });
+    res.status(200).json({
+        success:true,
+        product
+    })
+
 }
