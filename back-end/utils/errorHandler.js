@@ -4,8 +4,7 @@ class ErrorHandler  extends Error {          //ErrrorHandler is child class, Err
     constructor(message,statusCode){
         super(message);
         this.statusCode=statusCode
-
-        Error.captureStackTrace(this,this.constructer)
+        Error.captureStackTrace(this,this.constructor)
     }
 
 }
