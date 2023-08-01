@@ -9,4 +9,4 @@ class ErrorHandler  extends Error {          //ErrrorHandler is child class, Err
 
 }
 
-module.exports=ErrorHandler
+module.exports=ErrorHandler;
