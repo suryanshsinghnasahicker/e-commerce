@@ -29,7 +29,7 @@ exports.getProducts= async(req,res,next)=>{
 exports.getsingleProduct=async(req,res,next)=>{
     const product=await Product.findById(req.params.id)
     if (!product){
-        return next(new ErrorHandler('product not found',404))
+        return next(new ErrorHandler('product not found',404));
     }
     res.status(200).json({
         sucess:true,
